@@ -1,10 +1,9 @@
-import { define } from "../../utils.ts";
-
-export const handler = define.handlers({
-  GET(ctx) {
+export const handler = {
+  GET(_req, ctx) {
     const name = "Lightyear1603";
-    return new Response(
-      `Hello, ${name.charAt(0).toUpperCase() + name.slice(1)}!`,
-    );
+
+    return Response.json({
+      username: name,
+    });
   },
-});
+};
